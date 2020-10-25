@@ -122,12 +122,7 @@ jobs:
           find "${{ github.workspace }}" -type f -name "v2ray" -exec ls -lh {} \;
           echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
           touch release.txt
-      - name: UPX
-        uses: gacts/upx@master
-        with:
-          file: 'v2ray'
-          upx_args: '--lzma --best'
-    
+
       - name: Zip
         uses: papeloto/action-zip@v1
         with:
